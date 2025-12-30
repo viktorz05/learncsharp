@@ -1,0 +1,15 @@
+C:\Users\Viktor\.ssh\learn_csharp\module_2\bin\Debug\net10.0\module_2.exe
+C:\Users\Viktor\.ssh\learn_csharp\module_2\bin\Debug\net10.0\module_2.deps.json
+C:\Users\Viktor\.ssh\learn_csharp\module_2\bin\Debug\net10.0\module_2.runtimeconfig.json
+C:\Users\Viktor\.ssh\learn_csharp\module_2\bin\Debug\net10.0\module_2.dll
+C:\Users\Viktor\.ssh\learn_csharp\module_2\bin\Debug\net10.0\module_2.pdb
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.AssemblyInfoInputs.cache
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.AssemblyInfo.cs
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.csproj.CoreCompileInputs.cache
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.sourcelink.json
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.dll
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\refint\module_2.dll
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.pdb
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\module_2.genruntimeconfig.cache
+C:\Users\Viktor\.ssh\learn_csharp\module_2\obj\Debug\net10.0\ref\module_2.dll
