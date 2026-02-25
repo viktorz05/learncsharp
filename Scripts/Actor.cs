@@ -140,16 +140,38 @@ public class Actor : MonoBehaviour
 		return (minZ, maxZ, height);
     }
 
-	public void DetectFootPenetration()
-	{
-		/*** Please write your code for foot-penetration with stairs here ***/
+    public void DetectFootPenetration()
+    {
+        /*** Please write your code for foot-penetration with stairs here ***/
         /*** code to be completed by students begins ***/
+        for (int currentFrame = 0; currentFrame < NumFrames; currentFrame++)
+        {
+            ForwardKinematics.UpdateJointPositions(this, FrameData[currentFrame]);
 
+            for (int footIdx = 0; footIdx < FootEndEffectors.Count; footIdx++)
+            {
+                var footEndEffector = FootEndEffectors[footIdx];
+                if (footEndEffector == null)
+                {
+                    continue;
+                }
+
+                var footGlobalPos = footEndEffector.GlobalPosition;
+                for (int stairIdx = 0; stairIdx < Stairs.Count; stairIdx++)
+                {
+                    (float minZ, float maxZ, float height) = GetStairAttributes(stairIdx);
+                    if (footGlobalPos.z >= minZ && footGlobalPos.z <= maxZ && footGlobalPos.y < height)
+                    {
+                        FootTargets[footIdx][currentFrame] = new Vector3(footGlobalPos.x, height, footGlobalPos.z);
+                        break;
+                    }
+                }
+            }
+        }
 
         /*** code to be completed by students ends ***/
-	}
-
-	public void DetectFootSliding()
+    }
+    public void DetectFootSliding()
 	{
 		/*** Please write your code for foot-sliding here ***/
         /*** code to be completed by students begins ***/

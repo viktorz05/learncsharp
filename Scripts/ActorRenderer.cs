@@ -94,9 +94,25 @@ public class ActorRenderer : MonoBehaviour
         /*** code to be completed by students begins ***/
 
         // Update each JointSphere's position
-
+        for (int i = 0; i < JointSpheres.Count; i++)
+        {
+            JointSpheres[i].position = Actor.Joints[i].GlobalPosition;
+        }
         // Update each bone's position and rotation
+        for (int i = 1; i < Bones.Count; i++)
+        {
+            Transform boneT = Bones[i];
+            if (boneT == null) continue; // Skip the root joint which has no bone
 
+            Joint joint = Actor.Joints[i];
+            Joint parent = joint.GetParent();
+
+            if (parent == null) continue;
+            Vector3 parentPos = parent.GlobalPosition;
+            Vector3 jointPos = joint.GlobalPosition;
+            boneT.position = (parentPos + jointPos) * 0.5f;
+            boneT.rotation = parent.GlobalQuaternion * Quaternion.FromToRotation(Vector3.up, joint.LocalPosition);
+        }
         /*** code to be completed by students ends ***/
 
         // DO NOT REMOVE: Necessary to apply the required scaling
