@@ -17,11 +17,13 @@ public static class InverseKinematics
         Joint iter = endEffector.GetParent();
         while (iter != null)
         {
-            Debug.Log($"{iter.Name} is part of the ik chain");
             ikJoints.Add(iter);
             if (iter.GetParent() == null) break;                          // reached root
             if (iter.Name.ToLower().Contains("up")) break;   // found stop joint
             iter = iter.GetParent();
+        }
+        foreach (Joint j in ikJoints) {
+            Debug.Log($"IK chain: {j.Name}");
         }
         int maxIter = 20;
         float threshold = 0.01f;
@@ -68,7 +70,6 @@ public static class InverseKinematics
     {
         if (joint.GetParent() == null)
         {
-            joint.GlobalPosition = joint.LocalPosition;
             joint.GlobalQuaternion = joint.LocalQuaternion;
         }
         else
